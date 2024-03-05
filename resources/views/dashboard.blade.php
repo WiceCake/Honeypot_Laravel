@@ -10,19 +10,19 @@
     <!-- Company Logo -->
     <div class="company-logo-container flex justify-content-between w-100">
         <div class="company-logo">
-            <img src="{{asset('storage/assets/hondas.png')}}" alt="Honda Logo">
+            <img src="storage/assets/hondas.png" alt="Honda Logo">
         </div>
         <div class="company-logo">
-            <img src="{{asset('storage/assets/suzukis.png')}}" alt="Suzuki Logo">
+            <img src="storage/assets/suzukis.png" alt="Suzuki Logo">
         </div>
         <div class="company-logo">
-            <img src="{{asset('storage/assets/yamahas.png')}}" alt="Yamaha Logo">
+            <img src="storage/assets/yamahas.png" alt="Yamaha Logo">
         </div>
         <div class="company-logo">
-            <img src="{{asset('storage/assets/bajs.png')}}" alt="Bajaj Logo">
+            <img src="storage/assets/bajs.png" alt="Bajaj Logo">
         </div>
         <div class="company-logo">
-            <img src="{{asset('storage/assets/kawas.png')}}" alt="Kawasaki Logo">
+            <img src="storage/assets/kawas.png" alt="Kawasaki Logo">
         </div>
     </div>
 
@@ -110,7 +110,7 @@
                     <h2>P84,686k</h2>
                 </div>
                 <div class="w-100">
-                    <img src="{{asset('storage/assets/chart.svg')}}" alt="Report Chart">
+                    <img src="storage/assets/chart.svg" alt="Report Chart">
                 </div>
             </div>
 
@@ -122,7 +122,7 @@
                     <h2>3k Sales</h2>
                 </div>
                 <div>
-                    <img src="{{'storage/assets/honda_colored.png'}}" alt="Honda Logo">
+                    <img src="storage/assets/honda_colored.png" alt="Honda Logo">
                 </div>
             </div>
         </div>
@@ -142,34 +142,34 @@
                     <p>Total Orders</p>
                 </div>
                 <div>
-                    <img src="{{'storage/assets/pie_chart.png'}}" alt="Pie Chart">
+                    <img src="storage/assets/pie_chart.png" alt="Pie Chart">
                 </div>
             </div>
             <div>
                 <div class="flex justify-content-between align-content-center mb-5">
                     <div class="flex align-content-center">
-                        <img class="mr-3" src="{{'storage/assets/honda_colored.png'}}" width="50" alt="">
+                        <img class="mr-3" src="storage/assets/honda_colored.png" width="50" alt="">
                         <p><strong>Honda</strong></p>
                     </div>
                     <p>3k</p>
                 </div>
                 <div class="flex justify-content-between align-content-center mb-5">
                     <div class="flex align-content-center">
-                        <img class="mr-3" src="{{'storage/assets/suzuki_colored.png'}}" width="50" alt="">
+                        <img class="mr-3" src="storage/assets/suzuki_colored.png" width="50" alt="">
                         <p><strong>Suzuki</strong></p>
                     </div>
                     <p>2.4k</p>
                 </div>
                 <div class="flex justify-content-between align-content-center mb-5">
                     <div class="flex align-content-center">
-                        <img class="mr-3" src="{{'storage/assets/yamaha_colored.png'}}" width="50" alt="">
+                        <img class="mr-3" src="storage/assets/yamaha_colored.png" width="50" alt="">
                         <p><strong>Yamaha</strong></p>
                     </div>
                     <p>1.36k</p>
                 </div>
                 <div class="flex justify-content-between align-content-center mb-5">
                     <div class="flex align-content-center">
-                        <img class="mr-3" src="{{'storage/assets/baja_colored.png'}}" width="50" alt="">
+                        <img class="mr-3" src="storage/assets/baja_colored.png" width="50" alt="">
                         <p><strong>Bajaj</strong></p>
                     </div>
                     <p>2.5k</p>

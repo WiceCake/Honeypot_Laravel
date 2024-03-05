@@ -3,7 +3,7 @@
 
         <!-- MUTI Logo -->
         <div class="footer-logo">
-            <img src="{{asset('storage/assets/logo_footer.png')}}" alt="">
+            <img src="storage/assets/logo_footer.png" alt="">
         </div>
 
         <!-- MUTI Info and Other Links -->
