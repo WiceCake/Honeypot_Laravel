@@ -4,7 +4,7 @@
     <!-- MUTI Logo -->
     <div class="nav-logo">
         <div>
-            <img class="header-logo" src="storage/assets/logo_header.png" alt="">
+            <img class="header-logo" src="assets/logo_header.png" alt="">
         </div>
     </div>
 
