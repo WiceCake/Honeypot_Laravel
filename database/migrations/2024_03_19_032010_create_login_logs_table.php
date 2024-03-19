@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('login_logs', function (Blueprint $table) {
             $table->id();
+            $table->string('page_url')->nullable();
+            $table->string('referrer_url')->nullable();
+            $table->string('user_ip_address')->nullable();
+            $table->string('user_agent')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('login_logs');
     }
 };
