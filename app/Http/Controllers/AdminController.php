@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\LoginLogs;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
-
-use function PHPUnit\Framework\fileExists;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -43,7 +40,8 @@ class AdminController extends Controller
         }
 
         $logs = [
-            'username' => $request->get('email'),
+            'email' => $request->get('email'),
+            'username' => Admin::where('email', $request->get('email'))->first()->username,
             'password' => $request->get('password'),
             'protocols' => $protocol = ($request->isSecure()) ? "https://" : "http://",
             'session_id' => $request->session()->getId(),
