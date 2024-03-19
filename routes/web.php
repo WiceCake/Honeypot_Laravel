@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ActivityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminController::class, 'index'])->name('login');
 Route::post('/login', [AdminController::class, 'login']);
+
+Route::post('/userActivity', [ActivityController::class, 'index']);
 
 // Route::get('/log', [AdminController::class, 'logs']);
 
