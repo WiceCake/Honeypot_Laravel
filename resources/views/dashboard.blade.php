@@ -4,11 +4,11 @@
 
 @section('content')
 
-    <!-- Sub Header -->
+    {{-- Sub Header --}}
     <section class="text-lato">
         <div>
 
-            <!-- Company Logo -->
+            {{-- Company Logo --}}
             <div class="bg-dark">
                 <div class="container d-md-none d-lg-block">
                     <div class="row justify-content-between">
@@ -31,18 +31,18 @@
                 </div>
             </div>
 
-            <!-- Search Bar and Other Buttons -->
+            {{-- Search Bar and Other Buttons --}}
             <div class="bg-dark py-3">
                 <div class="d-flex justify-content-center">
                     <div class="btn-group me-3 d-flex">
                         <input type="text" class="py-2 px-1 rounded-start" style="width: 300px" name="search"
                             placeholder="Search...">
-                        <button class="btn btn-main text-white rounded-end"><i
+                        <button class="btn btn-main text-white rounded-end btns"><i
                                 class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="btn-group">
-                        <button class="btn btn-main rounded text-white me-3">View All</button>
-                        <button class="btn btn-main rounded text-white">Print Report</button>
+                        <button class="btn btn-main rounded text-white me-3 btns">View All</button>
+                        <button class="btn btn-main rounded text-white btns">Print Report</button>
                     </div>
 
                 </div>
@@ -50,17 +50,17 @@
 
         </div>
 
-        <!-- Dashboard Page -->
+        {{-- Dashboard Page --}}
         <div class="container my-5">
             <div class="row g-3">
-                <!-- Cards -->
+                {{-- Cards --}}
                 <div class="col-lg-3">
-                    <div class="card p-5 rounded">
+                    <div class="card p-5 rounded shadow-sm">
                         <div class="d-flex justify-content-between mb-3">
                             <div class="bg-main d-inline icon p-2 text-white rounded">
                                 <i class="fa-regular fa-clock px-1"></i>
                             </div>
-                            <div>
+                            <div class="pointer btns">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
@@ -70,12 +70,12 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card p-5 rounded">
+                    <div class="card p-5 rounded shadow-sm">
                         <div class="d-flex justify-content-between mb-3">
                             <div class="bg-main d-inline icon p-2 text-white rounded">
                                 <i class="fa-solid fa-wallet px-1"></i>
                             </div>
-                            <div>
+                            <div class="pointer btns">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
@@ -85,12 +85,12 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card p-5 rounded">
+                    <div class="card p-5 rounded shadow-sm">
                         <div class="d-flex justify-content-between mb-3">
                             <div class="bg-main d-inline icon p-2 text-white rounded">
                                 <i class="fa-brands fa-paypal p-1"></i>
                             </div>
-                            <div>
+                            <div class="pointer btns">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
@@ -100,12 +100,12 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="card p-5 rounded">
+                    <div class="card p-5 rounded shadow-sm">
                         <div class="d-flex justify-content-between mb-3">
                             <div class="bg-main d-inline icon p-2 text-white rounded">
                                 <i class="fa-regular fa-credit-card px-1"></i>
                             </div>
-                            <div>
+                            <div class="pointer btns">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
@@ -117,13 +117,13 @@
 
 
                 <div class="col-lg-6">
-                    <div class="card p-5 rounded">
+                    <div class="card p-5 rounded shadow-sm">
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h2 class="mb-2">Order Statistics</h2>
                                 <p>42.82k Total Sales</p>
                             </div>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i class="fa-solid fa-ellipsis-vertical pointer btns"></i>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-5">
                             <div>
@@ -171,11 +171,11 @@
                     </div>
                 </div>
 
-                <!-- Profile Report and Leading Sales-->
+                {{-- Profile Report and Leading Sales --}}
                 <div class="col-lg-6">
                     <div class="row g-3">
                         <div class="col-12 h-100">
-                            <div class="card p-5 rounded">
+                            <div class="card p-5 rounded shadow-sm">
                                 <div class="row">
                                     <div class="col-4">
                                         <p class="card-title mb-2">Profile Report</p>
@@ -211,4 +211,32 @@
             </div>
         </div>
     </section>
+
+
+    <script>
+        data = {}
+        $(document).ready(function() {
+            $('.btns').on('click', function(e) {
+                // Your event handling logic here
+                data = {
+                    btnName : $(this).text().toString(),
+                    btnTag  : $(this)[0].outerHTML
+                }
+                sendData(data)
+            });
+        });
+
+        function sendData(data) {
+
+            fetch('userActivity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                body: JSON.stringify(data)
+            })
+        }
+    </script>
 @endsection

@@ -22,7 +22,7 @@
                     <li class="nav-item dropdown mx-lg-2">
                         <a class="nav-link header-link dropdown-toggle" href="#">Sports</a>
                     </li>
-                    <div class="d-sm-none d-lg-inline m-auto d-xxl-none">
+                    <div class="d-none d-lg-inline m-auto d-xxl-none">
                         <i class="fa-solid fa-plus"></i>
                     </div>
                     <div class="d-lg-none d-xxl-inline nav-item mx-lg-2">

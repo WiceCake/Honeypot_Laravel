@@ -58,6 +58,12 @@ return [
             'ignore_exceptions' => false,
         ],
 
+        'honeypot' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/honeypot.log'),
+            'level' => 'debug'
+        ],
+
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
