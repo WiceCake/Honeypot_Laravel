@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AdminController::class, 'index']);
+Route::get('/', [AdminController::class, 'index'])->name('login');
+Route::post('/login', [AdminController::class, 'login']);
 
-Route::get('/dashboard', [AdminController::class, 'dashboard']);
+// Route::get('/log', [AdminController::class, 'logs']);
+
+Route::get('/sample', function(){
+    return 'nyawa';
+});
+
+Route::middleware('auth')->group(function(){
+    Route::get('/dashboard/logout', [AdminController::class, 'logout'])->middleware('auth'); 
+
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+});
