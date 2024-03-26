@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  webapp:
+    build:
+      context: ./docker/8.3
+    ports:
+      - '9000'
+    volumes:
+      - '.:/var/www/html'
+    networks:
+      - honeypot
+    depends_on:
+      - mysql
+    restart: unless-stopped
+  
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    ports:
+      - '${DB_PORT}:${DB_PORT}'
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+    volumes:
+      - 'hp_db:/var/lib/mysql'
+    networks:
+      - honeypot
+    restart: unless-stopped
+  
+  nginx:
+    image: 'nginx:alpine'
+    volumes:
+      - '.:/var/www/html'
+      - '.:/logs/:/var/log/nginx'
+      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+    ports:
+      - '80:80'
+    networks:
+      - honeypot
+    depends_on:
+      - webapp
+      - mysql
+    restart: unless-stopped
+
+
+networks:
+  honeypot:
+    driver: bridge
+
+volumes:
+  hp_db: 
+    driver: local
+  
